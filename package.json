@@ -1,14 +1,13 @@
 {
-	"name": "tooling",
-	"productName": "tooling",
+	"name": "toolbox",
+	"productName": "toolbox",
 	"version": "0.0.0",
 	"description": "My wonderful app",
 	"license": "MIT",
-	"repository": "profmagija/tooling",
+	"repository": "profmagija/toolbox",
 	"author": {
 		"name": "Nikola Bebić",
-		"email": "nikola.bebic@continental-corporation.com",
-		"url": "undefined"
+		"email": "prof@magija.rs"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
@@ -46,7 +45,7 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.profmagija.tooling",
+		"appId": "com.profmagija.toolbox",
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true

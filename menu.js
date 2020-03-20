@@ -37,7 +37,7 @@ ${debugInfo()}`;
 
 			openNewGitHubIssue({
 				user: 'profmagija',
-				repo: 'tooling',
+				repo: 'toolbox',
 				body
 			});
 		}
