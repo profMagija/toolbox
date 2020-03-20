@@ -1,18 +1,30 @@
-<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>tooling</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<h1>tooling</h1>
-				<p></p>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
-		</div>
-	</body>
+
+<head>
+	<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://unpkg.com/formiojs@latest/dist/formio.full.min.css'>
+	<link rel="stylesheet" href="./index.css">
+	<script src="./render.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="#" onclick="show_home()">Home</a>
+					<a class="nav-item nav-link" href="#" onclick="create_new()">Create New</a>
+					<a class="nav-item nav-link" href="#" onclick="edit_form()">Edit Form</a>
+				</div>
+			</div>
+		</nav>
+		<div id='root' class="container-fluid p-3"></div>
+	</div>
+</body>
+
 </html>
