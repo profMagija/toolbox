@@ -16,7 +16,7 @@
 		"start": "electron .",
 		"pack": "electron-builder --dir",
 		"dist": "electron-builder --linux --windows",
-		"release": "np"
+		"release": "np --yolo"
 	},
 	"dependencies": {
 		"axios": "^0.19.2",
@@ -68,8 +68,7 @@
 		},
 		"linux": {
 			"target": [
-				"AppImage",
-				"deb"
+				"tar.gz"
 			],
 			"category": "Network;Chat"
 		}
