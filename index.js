@@ -89,6 +89,11 @@ app.on('web-contents-created', (event, contents) => {
 
 		await shell.openExternal(url);
 	})
+
+	contents.on('will-attach-webview', async (event, url) => {
+		event.preventDefault();
+		await shell.openExternal(url);
+	})
 });
 
 (async () => {
