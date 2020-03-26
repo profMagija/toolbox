@@ -1,20 +1,18 @@
 <html>
-
 <head>
 	<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='https://unpkg.com/formiojs@latest/dist/formio.full.min.css'>
 	<link rel="stylesheet" href="./index.css">
-	<script src="./render.js"></script>
 </head>
 
-<body>
+<body onload="toolbox.startup()">
 	<div class="container-fluid">
-		<nav class="navbar navbar-expand navbar-light bg-light">
-			<a class="navbar-brand" href="#">Toolbox</a>
+		<nav class="navbar navbar-expand navbar-light bg-light" id="toolbox-navbar">
+			<a class="navbar-brand" href="#" onclick="toolbox.show_home()">Toolbox</a>
 			<div class="navbar-nav">
-				<a class="nav-item nav-link" href="#" onclick="show_home()">Home</a>
-				<a class="nav-item nav-link" href="#" onclick="create_new()">Create New</a>
-				<a class="nav-item nav-link" href="#" onclick="edit_form()">Edit Form</a>
+				<a class="nav-item nav-link" href="#" onclick="toolbox.show_home()">Home</a>
+				<a class="nav-item nav-link" href="#" onclick="toolbox.create_new()">Create New</a>
+				<a class="nav-item nav-link" href="#" onclick="toolbox.edit_form()">Edit Form</a>
 			</div>
 		</nav>
 		<div id='root' class="container-fluid p-3"></div>

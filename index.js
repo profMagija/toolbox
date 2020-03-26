@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const {app, BrowserWindow, Menu} = require('electron');
+const {app, BrowserWindow, Menu, shell} = require('electron');
 const {autoUpdater} = require('electron-updater');
 const {is} = require('electron-util');
 const unhandled = require('electron-unhandled');
@@ -37,7 +37,7 @@ const createMainWindow = async () => {
 		width: 1000,
 		height: 600,
 		webPreferences: {
-			nodeIntegration: true
+			preload: path.join(app.getAppPath(), 'preload.js')
 		}
 	});
 
@@ -51,7 +51,7 @@ const createMainWindow = async () => {
 		mainWindow = undefined;
 	});
 
-	await win.loadFile(path.join(__dirname, 'index.html'));
+	await win.loadFile(path.join(app.getAppPath(), 'index.html'));
 
 	return win;
 };
@@ -81,6 +81,14 @@ app.on('activate', () => {
 	if (!mainWindow) {
 		mainWindow = createMainWindow();
 	}
+});
+
+app.on('web-contents-created', (event, contents) => {
+	contents.on('new-window', async (event, url) => {
+		event.preventDefault();
+
+		await shell.openExternal(url);
+	})
 });
 
 (async () => {
