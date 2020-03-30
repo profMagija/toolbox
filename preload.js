@@ -20,9 +20,13 @@ var current_form_file_name = '';
 async function try_get_js(url) {
 	if (url.endsWith(".json")) {
 		try {
+			const jsurl = url.replace(/\.json$/, ".js");
+			const resp = await axios.get(jsurl, {
+				responseType: 'text'
+			});
 			let s = document.createElement('script');
 			s.type = 'text/javascript';
-			s.src = url.replace(/\.json$/, ".js");
+			s.innerHTML = resp.data;
 			document.head.appendChild(s);
 		} catch (err) {
 
