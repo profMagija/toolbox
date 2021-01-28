@@ -29,7 +29,7 @@
 		"formiojs": "^4.9.2"
 	},
 	"devDependencies": {
-		"electron": "^7.1.1",
+		"electron": "^9.4.0",
 		"electron-builder": "^22.4.1",
 		"np": "^5.0.3",
 		"xo": "^0.25.3",
